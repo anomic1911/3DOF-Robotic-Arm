@@ -51,16 +51,16 @@ void loop() {
       }
     }
 
-     if (PS3.getAnalogHat( PS3.getAnalogHat(LeftHatY) < 157 && PS3.getAnalogHat(LeftHatY) < 97){
-
-            leftArm.write(map(PS3.getAnalogHat(LeftHatX), 0, 255, 0, 180));
-     }
-
-     if (PS3.getAnalogHat( PS3.getAnalogHat(RightHatY) < 157 && PS3.getAnalogHat(RightHatY) < 97){
-
-            rightArm.write(map(PS3.getAnalogHat(HatX), 0, 255, 0, 180));
-     }
-          
+//     if (PS3.getAnalogHat( PS3.getAnalogHat(LeftHatY) < 157 && PS3.getAnalogHat(LeftHatY) < 97){
+//
+//            leftArm.write(map(PS3.getAnalogHat(LeftHatX), 0, 255, 0, 180));
+//     }
+//
+//     if (PS3.getAnalogHat( PS3.getAnalogHat(RightHatY) < 157 && PS3.getAnalogHat(RightHatY) < 97){
+//
+//            rightArm.write(map(PS3.getAnalogHat(HatX), 0, 255, 0, 180));
+//     }
+//          
     // Analog button values can be read from almost all buttons
     if (PS3.getAnalogButton(L2) || PS3.getAnalogButton(R2)) {
       Serial.print(F("\r\nL2: "));
@@ -101,14 +101,15 @@ void loop() {
 //                  myservo2.write(pos);              
 //                  delay(15);                       
 //                }   
+myservo2.write(180);
    }
       
     if (PS3.getButtonClick(CROSS)){
         Serial.print(F("\r\nCross"));
-//      for (pos = 180; pos >= 0; pos -= 5) { 
-//          myservo2.write(pos);            
-//          delay(15);                    
-//         }  
+      for (pos = 180; pos >= 0; pos -= 5) { 
+          myservo2.write(pos);            
+          delay(15);                    
+         }  
     }
    
       
